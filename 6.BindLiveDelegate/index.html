@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset=utf-8>
+  <title> Bind...Live...Delegate </title>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Click Me</h2>
+  <h2>Click Me</h2>
+  <h2>Click Me</h2>
+  <h2>Click Me</h2>
+  <h2>Click Me</h2>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+
+// (function(){
+//   $('h2').bind('click', function(){
+//     console.log('clicked');
+//     $(this).clone(true).appendTo('body');
+//     //true will retain event handlers
+//   });
+// })();
+
+// (function(){
+//   $('h2').live('click', function(){
+//     //We're attaching the event handler to the document, it's part of the document, but it's deprecated
+//     console.log('clicked');
+//     $(this).clone().appendTo('body');
+//   });
+// })();
+
+(function(){
+  $('div.container').delegate('h2', 'click', function(){
+    console.log('clicked');
+    $(this).clone().appendTo('.container');
+    //You're binding this to the container now
+    //If you binding this to the body then it wouldn't work.
+  });
+})();
+
+
+</script>
+
+</body>
+</html>
+
+##
