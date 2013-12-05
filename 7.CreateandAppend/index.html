@@ -28,11 +28,6 @@
 	</p>
 	<p>
 		<span class=co>Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua.
 	</p>
 </article>
 
@@ -42,9 +37,21 @@
 
 (function(){
 
-	$('p').eq(0).after(function(){
-		return $(this).prev()
-	});
+	var co = $('span.co').each(function(){
+		var $this = $(this);
+		$('<blockquote></blockquote>', {
+				class: 'co',
+				text: $this.text()
+		}).prependTo( $this.closest('p') );
+
+	})
+
+// $('p').eq(0).after(function(){
+// 	return $(this).prev()
+
+	// $('p').eq(0).after(function(){
+	// 	return $(this).prev()
+	// });
 
 	// $('h1').appendTo('article')
 
