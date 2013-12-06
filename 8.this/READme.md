@@ -1,12 +1,14 @@
 'this' refers to the parent window object
 
-```function doSomething(e) {
+```javascript
+function doSomething(e) {
   e.preventDefault();
   console.log(e);
   console.log(this);
 }
 
-$('a').on('click', doSomething);```
+$('a').on('click', doSomething);
+```
 
 the anchor tag has a link to it and to prevent the default action of going to the link you want to say e.preventDefault
 
