@@ -101,43 +101,9 @@
 
 (function(){
 
-$('html').addClass('js');
-//this will en
+	$('html').addClass('js');
 
-var contactForm = {
-	container: $('#contact'),
-
-	config: {
-		effect: 'slideToggle'
-	},
-
-	init: function(){
-			$('<button></button>', {
-					text: 'Contact Me'
-			})
-				.insertAfter('article:first')
-				.on('click', this.show);
-		},
-
-	show: function(){
-			contactForm.close.call(contactForm.container);
-			contactForm.container.[contactForm.config.effect](500);
-	},
-
-	close: function() {
-		var $this = $(this); // #contact
-		$('<span class=close>X</span>')
-				.prependTo(this)
-				.on('click', function(){
-						$this.hide();
-				})
-	}
-
-};
-
-contactForm.init();
-
-})();
+})()
 
 </script>
 
