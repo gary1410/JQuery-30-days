@@ -103,7 +103,54 @@
 
 	$('html').addClass('js');
 
-})()
+	var contactForm = {
+		container: $('#contact'),
+
+		config: {
+			effect: 'slideToggle',
+			speed: 500
+		},
+
+		init: function(config) {
+			$.extend(this.config, config);
+			$('<button></button>', {
+				text: 'Contact Me'
+			})
+				.insertAfter('article:first')
+				.on('click', this.show);
+				// in here this will refer to the the button that was clicked.
+			},
+
+		show: function() {
+			var cf = contactForm,
+			container = cf.container,
+			config = cf.config;
+
+			if (container.is(':hidden') ) {
+				contactForm.close.call(container);
+				container[config.effect](config.speed);
+			}
+				//this.container.show will not refer to contactForm
+		},
+
+		close: function() {
+			var $this = $(this); //contact form object
+
+			if ($this.find('span.close').length ) return;
+			$('<span class=close>X</span>')
+				 .prependTo(this)
+				 .on('click', function(){
+				 		// this = span
+				 		$this[contactForm.config.effect](500);
+				 })
+		}
+	};
+contactForm.init({
+	effect: 'fadeToggle',
+	speed: 2000
+});
+
+})();
 
 </script>
 
