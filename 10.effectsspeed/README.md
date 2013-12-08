@@ -18,6 +18,7 @@ $('div.content').hide()
   $('h1').on('click', function(){
   $(this).next().slideDown();
 })
+```
 
 You can reset the default to something else if you don't like it.
 
@@ -28,5 +29,5 @@ $('div.content').hide()
   $('h1').on('click', function(){
   $(this).next().slideDown('tortoise');
 })
-
+```
 example of going into the doc and renaming the defaults.
