@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Animate</title>
+    <style>
+    .box{
+      width: 400px;
+      background: red;
+      padding: 2em;
+      position: relative;
+      -webkit-transition: border-radius 1s;
+    }
+
+    .rounded{
+      border-radius: 50px;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div class = "box">
+  <h2>Some Content Here</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dolor magna. Nunc varius bibendum dictum. Mauris lobortis ac eros sed aliquam. Ut sit amet nulla at tortor accumsan sollicitudin. Maecenas convallis nisl consectetur mi gravida fermentum. Duis eget elit id neque ultrices pretium. Etiam ut vestibulum mi. Donec at lorem lacus. Aenean tincidunt leo id sapien volutpat, eget posuere lacus varius. Vivamus erat velit, convallis vitae luctus sit amet, congue quis turpis. Nulla euismod pharetra est vel interdum. Ut metus nisi, tempus eget neque at, aliquam porta augue.
+  <p>
+</div>
+
+<p><button>Center</button></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+
+(function(){
+
+
+//   var box = $('div.box'); // you're only quierying the dom one time by doing this.  Better for performanc
+
+//   $('button').on('click', function(){
+//     box.css('font-size', '+=5');  // you can just say '+=5' to increase the value of the font.
+//   })
+
+// })();
+
+
+  // var box = $('div.box');
+  // $('button').on('click', function(){
+  //   box.animate({  // you want to pass an object here in stead.
+  //     'fontSize': '+=5',
+  //     'width': '+=300'
+  //   }, 300, 'swing', function() {
+  //     console.log('completed')
+  //   });
+
+
+  // });
+
+  var box = $('div.box');
+
+  $('button').on('click', function() {
+    box.addClass('rounded')
+  })
+
+})();
+
+var box = $('div.box'),
+  fontSize = parseInt( box.css('font-size'), 10);
+
+  $('button').on('click', functin() {
+    box.css('font-size', 'fontSize =+5');
+  });
+
+
+</script>
+
+
+</body>
+</html>
