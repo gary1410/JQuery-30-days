@@ -18,21 +18,6 @@
 
 <script>
 
-// (function(){
-//   $('h2').bind('click', function(){
-//     console.log('clicked');
-//     $(this).clone(true).appendTo('body');
-//     //true will retain event handlers
-//   });
-// })();
-
-// (function(){
-//   $('h2').live('click', function(){
-//     //We're attaching the event handler to the document, it's part of the document, but it's deprecated
-//     console.log('clicked');
-//     $(this).clone().appendTo('body');
-//   });
-// })();
 
 (function(){
   $('div.container').delegate('h2', 'click', function(){
@@ -48,5 +33,4 @@
 
 </body>
 </html>
-
 ##
