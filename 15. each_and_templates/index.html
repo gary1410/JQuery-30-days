@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Q&A</title>
+</head>
+<body>
+
+<script id=blogTemplate type=tuts/template>
+	<h2> {{title}} </h2>
+	<img src={{thumbnail}} alt={{title}}>
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+
+(function() {
+		var content = [
+			{
+					title: 'My awesome blog post',
+					thumbnail: 'http://imgc.classistatic.com/cps/poc/131125/216r1/91872hb_27.jpeg',
+			},
+			{
+					title: "My second awesome blog post",
+					thumbnail: 'http://www.aplacetolovedogs.com/wp-content/uploads/2013/09/frenchie-all-smiles-290x300.jpg',
+			}
+		],
+		template = $.trim( $('#blogTemplate').html() ),
+		frag = '';
+
+
+
+	$.each( content, function( index, obj ) {
+		frag +=
+			template.replace( /{{title}}/ig, obj.title )
+					.replace( /{{thumbnail}}/ig, obj.thumbnail );
+	});
+
+	$('body').append(frag);
+})();
+
+</script>
+</body>
+</html>
