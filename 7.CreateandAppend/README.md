@@ -17,15 +17,19 @@ Methods used
 
 + Here this is saying create the tags and set the text and class by using an object.  If you're creating an element you're going to say insertAfter or insertBefore
 
-`$('<h2></h2>', {
+```javascript
+$('<h2></h2>', {
   text: 'Hello from JavaScript',
   class: 'myClass',
-}).insertAfter('p:nth-child(3)');`
+}).insertAfter('p:nth-child(3)');
+```
 
-`$('<h2></h2>', {
+```javascript
+$('<h2></h2>', {
   text: 'Hello from JavaScript',
   class: 'myClass',
-}).insertBefore('p:nth-child(3)');`
+}).insertBefore('p:nth-child(3)');
+```
 
 
 + This says, get the `<h1>` and append to the article.  This will physically move the h1 tag
@@ -43,11 +47,12 @@ Methods used
 
 + This is function that grabs a `<span>` with text, creates blockquote tags an uses an object to set the class and text to prepend it ot the closest `<p>`
 
-  `var co = $('span.co').each(function(){
+  ```javascript
+  var co = $('span.co').each(function(){
     var $this = $(this);
     $('<blockquote></blockquote>', {
         class: 'co',
         text: $this.text()
     }).prependTo( $this.closest('p') );
-
-  })`
+  });
+  ```
