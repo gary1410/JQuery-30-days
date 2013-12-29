@@ -1,7 +1,7 @@
 Create and Append
 =================
 
-+ This lesson was about Creating tags and Appending and Prepending things
+This lesson was about Creating tags and Appending and Prepending things
 
 Methods used
 -----------------
@@ -14,6 +14,7 @@ Methods used
 
 + `$('<h2></h2>')` Jquery in this instance knows how to create tags
 
+##### Creating tags as objects and then using them with `.insertAfter` or `.insertBefore`#####
 
 + Here this is saying create the tags and set the text and class by using an object.  If you're creating an element you're going to say insertAfter or insertBefore
 
@@ -31,21 +32,27 @@ $('<h2></h2>', {
 }).insertBefore('p:nth-child(3)');
 ```
 
+### Example of `.appendTo` ### 
 
-+ This says, get the `<h1>` and append to the article.  This will physically move the h1 tag
+This says, get the `<h1>` and append to the article.  This will physically move the h1 tag
 
 `$('h1').appendTo('article')`
 
-+ This says get the collection of `$('p')` and after each collection we're going to append `<h1>` to each one of those
+### Example of `.after` ###
+
+This says get the collection of `$('p')` and after each collection we're going to append `<h1>` to each one of those
 
 `$('p').after( $('h1') );`
 
-+ But you can use below to only get the first paragraph tag and then append the `<h1>` tags after that.
+### Example of `.eq(0)` and `.after` ###
+
+But you can use below to only get the first paragraph tag and then append the `<h1>` tags after that.
 
 `$('p').eq(0).after( $('h1') );`
 
+### Example of using `.each` ###
 
-+ This is function that grabs a `<span>` with text, creates blockquote tags an uses an object to set the class and text to prepend it ot the closest `<p>`
+This is a function that grabs a `<span>` with text, creates blockquote tags an uses an object to set the class and text to prepend it to the closest `<p>`
 
   ```javascript
   var co = $('span.co').each(function(){
