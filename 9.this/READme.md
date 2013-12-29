@@ -26,7 +26,7 @@ $('a').on('click', doSomething);
 ```
 
 
-`this` in this case refers to the anchor object instead of the defined 'var obj'
+`this` in this case refers to the anchor object instead of the defined `var obj`
 
 *******************
 
@@ -92,4 +92,4 @@ var obj = {
 $('a').on('click', $.proxy(obj.doIt, obj))
 ```
 
-when 'doIt()'' is call, we want to make sure this is referring to 'obj'
+when `doIt()` is call, we want to make sure this is referring to `obj`
