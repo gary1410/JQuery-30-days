@@ -2,7 +2,6 @@ We want an object and want to filter through and take it's content and put it on
 
 1) We want to wrap the content into an array of objects
 
-
 ```javascript
   var content = [
     {
